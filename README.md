@@ -38,5 +38,7 @@ El equipo definirá horas, prioridad, puntos de historia y sprint. La guía por 
 
 La guía Markdown se puede leer y editar desde GitHub. Los archivos CSV usan separador de punto y coma y codificación UTF-8; pueden abrirse en una hoja de cálculo. Al cambiar las reglas, actualizar también el PDF y registrar qué pruebas deben repetirse. Mantener la evidencia de implementación y revisión antes de cerrar el requisito.
 
-El repositorio es privado. Para que otra persona pueda abrir su enlace, el propietario debe invitar su cuenta de GitHub y esa persona debe aceptar la invitación.
+El repositorio se comparte públicamente por decisión de su propietario. Cualquier persona puede consultar y descargar estos materiales mediante el enlace; no se necesitan invitaciones para leerlos.
+
+Seguimiento: [tarjeta RS-03 en Trello](https://trello.com/c/1f2jrRjS). El tablero conserva sus permisos de acceso propios.
 
