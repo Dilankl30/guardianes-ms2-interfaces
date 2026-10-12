@@ -1,0 +1,4 @@
+Herramienta: image_gen integrada. Fecha: 12 de octubre de 2026. Arte de propuesta para revisión.
+Referencia: pequeña imagen al pie de la página 17 del storytelling aportado.
+Prompt: ilustración infantil 2D, paisaje 3:2 de selva amazónica, Guardián joven con sombrero y chaleco verdes a la izquierda, río turquesa, vegetación y delfines rosados; colores vivos, formas legibles; sin texto, botones ni marcas de agua. No representa lengua de señas.
+Archivo: prototipo/assets/guardian-rio.png

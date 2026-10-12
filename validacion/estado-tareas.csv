@@ -1,0 +1,37 @@
+﻿Número;Tarea;Estado real;Evidencia
+1;Documentar el alcance del MS-2 y el inventario de tipos de pantalla compartidos por los cinco niveles.;Realizada;documentacion/MS2-Estandares-de-interfaces-LSEC.md
+2;Definir el ciclo de interacción del juego y relacionar las acciones con el objetivo de lectura de cada nivel.;Realizada;documentacion/MS2-Estandares-de-interfaces-LSEC.md
+3;Establecer tipografía, tamaños, espaciado y paleta, y calcular el contraste de las combinaciones propuestas.;Realizada;documentacion/MS2-Estandares-de-interfaces-LSEC.md
+4;Diseñar los esquemas de distribución de la pantalla amplia y de la pantalla compacta.;Realizada;documentacion/MS2-Estandares-de-interfaces-LSEC.md
+5;Especificar funciones y estados de botones, tarjetas, audio, ayuda, progreso y mensajes.;Realizada;documentacion/MS2-Estandares-de-interfaces-LSEC.md
+6;Relacionar las reglas de accesibilidad con WCAG 2.2 y las buenas prácticas de accesibilidad de juegos.;Realizada;documentacion/MS2-Estandares-de-interfaces-LSEC.md
+7;Redactar criterios de aceptación verificables y preparar el plan de pruebas del MS-2.;Realizada;documentacion/MS2-Estandares-de-interfaces-LSEC.md
+8;Confirmar con el equipo la arquitectura elegida y registrar los dispositivos, navegadores o sistemas que se usarán.;"Parcial: Unity 2D confirmado; versión y equipos pendientes";
+9;Diseñar el prototipo de bienvenida con personaje, misión, AUDIO y COMENZAR.;Realizada;"prototipo/index.html; evidencias/"
+10;Diseñar el prototipo de selección simple con estados inicial, seleccionado, acierto y reintento.;Realizada;"prototipo/index.html; evidencias/"
+11;Diseñar el prototipo de selección múltiple con marcado, desmarcado y confirmación del conjunto.;Realizada;"prototipo/index.html; evidencias/"
+12;Diseñar la ayuda, el progreso, la recompensa y los estados de carga, vacío y error del reporte docente.;Realizada;"prototipo/index.html; evidencias/"
+13;Revisar con el docente las consignas, pistas, mensajes e imágenes de las escenas que usarán las plantillas.;Pendiente de integración o revisión;
+14;Implementar los estilos y componentes reutilizables en la tecnología confirmada por el equipo.;Pendiente de integración o revisión;
+15;Aplicar las plantillas y los tamaños a las escenas y al reporte docente definidos en el backlog.;Pendiente de integración o revisión;
+16;Implementar selección simple, selección múltiple y prevención de confirmaciones repetidas.;"Demostrado parcialmente en prototipo; pendiente en Unity";
+17;Integrar controles de AUDIO y AYUDA, evitando superposición de locuciones y pérdida de contexto.;"Ayuda y audio del sistema en prototipo; locuciones locales pendientes";
+18;Redactar e integrar etiquetas accesibles y alternativas textuales de las imágenes informativas.;"Demostrado parcialmente en prototipo; pendiente en Unity";
+19;Implementar navegación por teclado, foco visible y entrada y salida accesible de la ayuda.;"Demostrado parcialmente en prototipo; pendiente en Unity";
+20;Anunciar selección y resultado a las tecnologías de asistencia del entorno objetivo.;"Demostrado parcialmente en prototipo; pendiente en Unity";
+21;Aplicar mensajes de acierto y reintento, progreso y recompensa con señales visuales y texto.;"Demostrado parcialmente en prototipo; pendiente en Unity";
+22;Implementar reducción de movimiento y los estados de interfaz relacionados con uso sin conexión y guardado.;"Demostrado parcialmente en prototipo; pendiente en Unity";
+23;Probar los recorridos de bienvenida, respuesta simple, respuesta múltiple, ayuda, error y recompensa con teclado y lector de pantalla.;"Teclado probado en prototipo; lector de pantalla y Unity pendientes";
+24;Probar contraste, tamaño de controles, ampliación del texto, redistribución y cambio de orientación en los equipos acordados.;"Contraste y redistribución probados en prototipo; equipos reales pendientes";
+25;Probar el recorrido con sonido apagado, recursos preparados sin conexión y repetición rápida de acciones.;"Lógica y recorrido sin audio probados; recursos reales offline pendientes";
+26;Realizar la revisión de uso con el docente y registrar los problemas de comprensión y operación.;Pendiente de integración o revisión;
+27;Corregir los defectos encontrados y repetir las pruebas afectadas.;"Demostrado parcialmente en prototipo; pendiente en Unity";
+28;Guardar las evidencias y obtener la revisión del equipo antes de cerrar el MS-2.;"Evidencias guardadas; revisión del equipo pendiente";
+29;Confirmar LSEC como lengua de señas del proyecto y documentar su alcance transversal.;Realizada;lsec/
+30;Diseñar el panel LSEC normal y ampliado con controles, estados de carga y alternativas cuando falta un video.;Realizada;"prototipo/index.html; evidencias/"
+31;Preparar el catálogo de guiones del ejemplo y la matriz de cobertura LSEC de las 60 escenas.;Realizada;lsec/
+32;Preparar los componentes C# de referencia para tema visual, selección y reproducción de videos LSEC locales.;Realizada;"unity/Runtime/; unity/README.md"
+33;Validar los guiones con el docente y traducirlos a LSEC con profesionales y personas sordas usuarias de LSEC.;Pendiente de integración o revisión;
+34;"Grabar, revisar y aprobar cada video LSEC; registrar versión, referencia de validación y permisos de uso.";Pendiente de integración o revisión;
+35;Integrar los videos LSEC aprobados en las escenas, opciones, ayudas, resultados, menús, ajustes y reportes de Unity.;Pendiente de integración o revisión;
+36;Probar interpretación LSEC, legibilidad del intérprete, teclado, lector de pantalla y funcionamiento sin conexión en el ejecutable final.;Pendiente de integración o revisión;

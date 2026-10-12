@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+Library/
+Temp/
+Logs/
+.DS_Store
