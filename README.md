@@ -1,42 +1,42 @@
 # MS-2 · Estándares de interfaces y LSEC
 
-**Guardianes de la Amazonía Lectora · Dilan · Versión 2.0**
+**Metáfora del Sistema · Guardianes de la Amazonía Lectora · Dilan**
 
-MS significa Metáforas del Sistema. MS-2 es el nombre vigente de esta tarea, antes llamada RS-03. Se conserva la dirección de este repositorio para que los enlaces compartidos sigan funcionando. El stack confirmado por el equipo es **Unity 2D y C# para escritorio offline**.
+MS significa **Metáforas del Sistema**. Esta metáfora define una aventura guiada con información por etapas: primero la pregunta, después las respuestas y apoyos de Ayuda, Señas y Lectura disponibles a demanda.
 
-## Ver el diseño
+![Pregunta del ejemplo](evidencias/01-pregunta.jpg)
 
-![Ejemplo de bienvenida con panel LSEC](evidencias/01-bienvenida.jpg)
+## Consultar la entrega
 
-- [Descargar el ejemplo en un solo HTML](prototipo/MS2-demo.html): descargar el archivo y abrirlo con doble clic en Chrome o Edge. No requiere instalación ni servidor. Incluye el arte y las pantallas; los videos LSEC siguen pendientes.
-- [Guía actual en PDF](documentacion/MS2-Estandares-de-interfaces-LSEC.pdf) y [texto editable](documentacion/MS2-Estandares-de-interfaces-LSEC.md).
-- [Código y montaje para Unity](unity/README.md).
-- [Guiones de referencia para traducir a LSEC](lsec/catalogo-guiones-ejemplo.csv) y [cobertura de los cinco niveles](lsec/cobertura-cinco-niveles.csv).
-- [Estado real de cada tarea](validacion/estado-tareas.csv) y [registro de pruebas](validacion/resultados-MS2.md).
-- [Tarjeta MS-2](https://trello.com/c/1f2jrRjS), en [Guardianes de la selva → Backlog](https://trello.com/b/nVTcr6vo/guardianes-de-la-selva).
+- [Especificación en PDF](documentacion/MS2-Estandares-de-interfaces-LSEC.pdf) y [documentación editable](documentacion/MS2-Estandares-de-interfaces-LSEC.md).
+- [Ejemplo interactivo](prototipo/MS2-demo.html): descargar y abrir con doble clic en Chrome o Edge.
+- [Pantallas ilustradas](diseno/pantallas) y [reglas de presentación](diseno/presentacion-modular.md).
+- [Componentes y montaje para Unity](unity/README.md).
+- [Guiones para LSEC](lsec/catalogo-guiones-ejemplo.csv) y [cobertura de las 60 escenas](lsec/cobertura-cinco-niveles.csv).
+- [Criterios y tareas](trello/MS2-tarjeta-y-tareas.txt), [estado de tareas](validacion/estado-tareas.csv) y [pruebas](validacion/resultados-MS2.md).
+- [Tarjeta MS-2 en Guardianes de la selva](https://trello.com/c/1f2jrRjS).
 
-## Qué está preparado
+## Funcionamiento
 
-Diseño de bienvenida, respuesta simple, respuesta múltiple, ayuda, reintento, acierto, recompensa y estados docentes. El panel LSEC normal y ampliado permite cambiar entre consigna, opciones, ayuda y otros textos. La respuesta no se pierde al consultar un apoyo. No hay temporizador ni penalización por reintentar.
+Ver respuestas revela las opciones y mantiene la consigna en una franja. En respuesta simple, tocar una tarjeta evalúa; en respuesta múltiple, se marca el conjunto y se confirma. Los resultados requieren Continuar para cambiar de escena.
 
-El ejemplo utiliza las escenas **1, 2, 11 y 12 del Nivel 3**. Sus cuatro vistas no completan el nivel. Los reportes contienen únicamente estados y datos ficticios. Las pistas nuevas requieren revisión docente.
+Ayuda, Señas y Lectura utilizan un solo diálogo activo, conservan la actividad y devuelven el foco al cerrarse. LSEC cubre cada contenido según su contexto. El intérprete dispone de video ampliable, pausa y repetición. Cuando falta un clip aprobado, se muestra Video en preparación.
 
-## Qué falta para cerrar MS-2
+## Alcance de implementación
 
-Grabar y validar los videos en LSEC, integrar las plantillas y recursos en el juego Unity completo, probar el ejecutable en los equipos acordados y revisar con el docente y personas usuarias de LSEC. **El marcador del intérprete es una reserva de espacio, no una traducción.** Los controles de reproducción están desactivados cuando falta el clip aprobado.
+El producto utiliza Unity 2D y C# para escritorio sin conexión. El HTML demuestra interacción con las escenas 1, 2, 11 y 12 del Nivel 3 y reportes ficticios; no registra progreso real. La guía establece los estándares de los cinco niveles.
 
-El modelo de selección C# se comprobó con .NET; los componentes Unity se entregan como código de referencia, sin afirmar compilación en Unity. El prototipo usa la voz disponible del navegador: la aplicación final necesita locuciones locales.
+El paquete contiene diseño, prototipo y código C# de referencia. La revisión docente, producción y validación LSEC, integración Unity y pruebas del ejecutable en los dispositivos del equipo son actividades pendientes de cierre. Los controles del video permanecen inactivos hasta contar con grabaciones aprobadas.
 
-## Carpetas
+## Organización
 
-| Carpeta | Uso |
+| Carpeta | Contenido |
 | --- | --- |
-| documentacion | Guía vigente de MS-2 |
-| prototipo | HTML, CSS, JS e ilustración; MS2-demo.html reúne todo para abrir localmente |
-| unity | Componentes C# y guía de montaje |
-| lsec | Guiones en español, cobertura y protocolo de producción |
-| evidencias | Capturas del prototipo y seguimiento |
-| validacion | Casos, resultados y estado real de tareas |
+| documentacion | Especificación de MS-2 en PDF y texto editable |
+| diseno | Pantallas, composición, paleta y origen de recursos |
+| prototipo | HTML, CSS, JavaScript y fondo del ejemplo |
+| unity | Componentes C# de referencia y montaje |
+| lsec | Guiones, cobertura y producción lingüística |
+| validacion | Pruebas, resultados y estado de tareas |
+| evidencias | Capturas del prototipo |
 | trello | Descripción, criterios y tareas numeradas |
-
-Los documentos anteriores se conservan en archivo/rs03 como referencia histórica. Horas, prioridad y puntos de historia los estima el equipo.

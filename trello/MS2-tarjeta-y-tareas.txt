@@ -1,54 +1,57 @@
 MS-2 | Estándares de interfaces y LSEC | Dilan
 
+Tipo: Metáfora del Sistema
+Responsable: Dilan
+
 DESCRIPCIÓN
-Definir y aplicar los estándares de interfaces de Guardianes de la Amazonía Lectora para Unity 2D: distribución, tipografía, contraste, tamaños, navegación, selección, ayuda, audio, retroalimentación, progreso, recompensa y reportes. Incorporar acceso a lengua de señas ecuatoriana (LSEC) en los contenidos y controles de los cinco niveles, mediante videos locales contextualizados, ampliables y reproducibles a demanda. Mantener la identidad visual del storytelling, el aprendizaje sin penalizaciones y el funcionamiento sin conexión. Separar la elección de una respuesta de su confirmación y conservar la actividad al utilizar los apoyos.
+Definir y aplicar los estándares de interfaces de Guardianes de la Amazonía Lectora mediante una presentación por etapas. La actividad muestra primero la pregunta y después las respuestas; Ayuda, Señas y Lectura se consultan en diálogos independientes que conservan el estado del juego. Establecer identidad visual amazónica, tipografía, color, tamaños, navegación, retroalimentación, progreso, recompensas y reportes docentes para Unity 2D y C# de escritorio sin conexión. Proporcionar acceso contextual a lengua de señas ecuatoriana (LSEC) en los contenidos y controles de los cinco niveles, mediante videos locales aprobados y reproducibles a demanda.
 
 CRITERIOS DE ACEPTACIÓN
 
-La guía y los componentes identifican las pantallas de bienvenida, actividad, ayuda, resultado, recompensa, navegación y reporte docente. Conservan personajes y temática amazónica, con texto real sobre fondos sólidos. El diseño amplio distingue consigna, actividad y panel LSEC; en espacio reducido los apila sin tapar opciones ni recortar texto.
+Al abrir una actividad, se muestran el nivel, el número de escena, el personaje y una tarjeta con la pregunta, Escuchar y Ver respuestas. Las opciones permanecen ocultas hasta pulsar Ver respuestas. Ayuda, Señas y Lectura están disponibles como tres controles con nombre visible. La consigna y los controles se construyen como texto y componentes editables.
 
-Las consignas, opciones y explicaciones mantienen el significado del storytelling. Las pistas nuevas están identificadas como propuestas y reciben revisión docente. Cada escena conserva su número original; el prototipo de cuatro escenas no registra ni presenta como completado el nivel completo.
+Al pulsar Ver respuestas, la pregunta ocupa una franja compacta y aparecen tarjetas de igual tamaño y tratamiento visual. En la escena 2 del Nivel 3 se muestran Agua limpia, Botella de plástico y Hoja. No se identifica la respuesta correcta antes de responder. La franja conserva Escuchar y las tarjetas no quedan cubiertas por los apoyos.
 
-Las combinaciones de texto y fondo alcanzan al menos 4,5:1 y los indicadores necesarios de control y selección, 3:1 respecto a los colores contiguos. El foco es visible; la selección, el acierto y el reintento incluyen texto o símbolos además del color. Ninguna información necesaria depende únicamente del sonido.
+En respuesta simple, pulsar una tarjeta evalúa esa respuesta sin un botón de confirmación adicional. El resultado aparece en texto y permite reintentar o continuar mediante una acción separada. En selección múltiple, se pueden marcar y desmarcar opciones y Confirmar respuestas valida el conjunto exacto. La respuesta vacía solicita una selección. Un acierto bloquea nuevas confirmaciones y no duplica progreso ni recompensa.
 
-El tamaño de texto y el área de cada control se verifican a la resolución y escala del equipo objetivo. La propuesta web usa texto principal de 24 px y objetivos de al menos 48 × 48 px; la referencia de Unity usa 36 y 72 unidades en Canvas 1920 × 1080 como punto de partida, sin asumir equivalencia física universal. La ampliación no oculta controles ni contenido.
+Ayuda, Señas y Lectura abren un único diálogo sobre un fondo atenuado e inactivo. El foco entra en el diálogo y permanece dentro; Escape y Cerrar lo cierran y devuelven el foco al control que lo abrió. Consultar un apoyo conserva escena, etapa, respuestas y resultado. Pasar de una ayuda a su interpretación mantiene un único diálogo activo y permite volver a la actividad.
 
-En selección simple queda una opción elegida. En selección múltiple se pueden marcar y desmarcar opciones; solo se acepta el conjunto correcto. ELEGIR valida y no cambia de escena automáticamente. Sin selección se solicita elegir. Una confirmación repetida no duplica intentos, avance ni recompensas.
+La ayuda presenta una pista de la actividad y permite escucharla, consultarla en LSEC y volver al mismo punto. Escuchar inicia o repite la locución por acción del estudiante. Abrir un diálogo, cambiar de escena o iniciar el video detiene la locución en curso. La información necesaria sigue disponible en texto y no existe penalización por usar apoyos o reintentar.
 
-AYUDA conserva selección y progreso, abre la pista de la escena y permite volver al mismo punto. AUDIO comienza por acción del estudiante, permite pausar y repetir, y se detiene al cambiar de escena. La información necesaria permanece en texto e imagen cuando el audio está apagado.
+Lectura permite aumentar el texto y reducir el movimiento, conserva estas preferencias en el dispositivo cuando el almacenamiento está disponible y comunica los fallos de guardado sin perder la sesión. En la resolución mínima acordada, el texto ampliado, los controles y los diálogos permanecen legibles y accesibles mediante redistribución o desplazamiento vertical.
 
-Todos los controles funcionan con las entradas acordadas. En los modales, el foco entra, permanece dentro y vuelve al control de origen al cerrar. En el ejecutable Unity se comprueba el mecanismo accesible con el lector de pantalla elegido; exponer texto en Canvas o emitir un evento no se considera prueba de accesibilidad nativa.
+La interfaz mantiene contraste de texto de al menos 4,5:1 como regla del proyecto. Los límites e indicadores necesarios para reconocer controles, selección y foco se verifican con 3:1 respecto a los colores contiguos pertinentes. Los controles tienen un objetivo inicial de 48 por 48 píxeles en el prototipo y se verifican físicamente en Unity. Estados, selección y errores se distinguen por texto o símbolos además del color.
 
-Cada consigna, opción, ayuda, resultado, recompensa, explicación de navegación, ajuste y mensaje de estado dispone de una referencia LSEC en el catálogo. El clip corresponde al texto y versión mostrados. Los clips de resultado solo se ofrecen después de evaluar; la traducción no señala la respuesta correcta antes de tiempo.
+Cada consigna, opción, pista, resultado, recompensa, explicación de control, menú, ajuste y estado del sistema tiene un identificador y una referencia de video LSEC en el catálogo. El video corresponde al texto mostrado y a su aprobación registrada. Las interpretaciones de resultados se ofrecen solo después de responder y ninguna opción revela la solución por su traducción.
 
-El panel LSEC permite reproducir, pausar, repetir y ampliar. El estudiante controla el inicio. Rostro, manos y espacio de señas se ven completos y con claridad, sin recorte ni superposición con subtítulos o controles. Abrir o cerrar el panel no cambia la respuesta ni el progreso y el cambio de escena detiene el video anterior.
+Señas abre un diálogo con el contexto seleccionado, área de video, texto de referencia y controles Reproducir, Pausar, Repetir y Ampliar. El video no se inicia automáticamente. La ampliación mantiene rostro, manos y espacio de señas completos sin recortar. Cerrar el diálogo o cambiar de escena detiene la reproducción y conserva las respuestas.
 
-Los videos LSEC se graban con personas competentes en LSEC y se revisan lingüísticamente con participación de una persona sorda usuaria de LSEC. La revisión docente verifica equivalencia y adecuación educativa. Se registra aprobación y versión por clip. Un marcador gráfico o un avatar sin validación no cuenta como traducción.
+Los videos se traducen y revisan con personas competentes en LSEC, con participación de personas sordas usuarias de esta lengua y revisión docente de equivalencia educativa. Cada recurso registra archivo local, versión del contenido, aprobación y permisos de uso. Mientras falte el video aprobado se muestra Video en preparación y los controles de reproducción permanecen inactivos; este estado no acredita cobertura LSEC.
 
-El ejecutable incluye los recursos de audio e interpretación aprobados para funcionar sin red. Si falta un video o falla su carga, ofrece un aviso comprensible y conserva el texto y la actividad; no afirma que la traducción esté disponible. La falta de un clip obligatorio impide cerrar la cobertura LSEC.
+El ejecutable incluye las locuciones y los videos aprobados para funcionar sin conexión. Se verifican carga, pausa, repetición, ampliación y fallo del recurso en los equipos acordados. Si un recurso falla, se comunica el problema, se conserva el texto y se puede volver a la actividad. Los reportes incluyen carga, ausencia de datos, error recuperable y resultados, sin mezclar datos ficticios con registros reales.
 
-Las pruebas registran entorno, recorrido, resultado y evidencia. La entrega distingue diseño, prototipo, código de referencia e integración final. MS-2 se cierra después de integrar los cinco niveles, validar los videos, probar los equipos acordados, revisar con el docente y resolver los defectos que impidan cumplir estos criterios.
+MS-2 se acepta cuando las plantillas y apoyos están integrados en los cinco niveles, se completa la matriz LSEC, se prueban teclado, foco, lector de pantalla seleccionado, ampliación y uso sin red, y se documenta la revisión docente y de usuarios. Las evidencias identifican entorno, recorrido y resultado; los incumplimientos que impidan realizar la actividad se resuelven antes del cierre.
 
 TAREAS
-1. Documentar el alcance del MS-2 y el inventario de tipos de pantalla compartidos por los cinco niveles.
-2. Definir el ciclo de interacción del juego y relacionar las acciones con el objetivo de lectura de cada nivel.
+1. Documentar MS-2 como Metáfora del Sistema y definir las pantallas comunes de los cinco niveles.
+2. Definir la presentación por etapas: pregunta, respuestas, retroalimentación y continuación, vinculada al objetivo educativo.
 3. Establecer tipografía, tamaños, espaciado y paleta, y calcular el contraste de las combinaciones propuestas.
-4. Diseñar los esquemas de distribución de la pantalla amplia y de la pantalla compacta.
-5. Especificar funciones y estados de botones, tarjetas, audio, ayuda, progreso y mensajes.
+4. Diseñar la distribución amplia y compacta con módulos flotantes, personaje visible y apoyos accesibles.
+5. Especificar los estados de pregunta, tarjetas, Escuchar, Ayuda, Señas, Lectura, progreso y mensajes.
 6. Relacionar las reglas de accesibilidad con WCAG 2.2 y las buenas prácticas de accesibilidad de juegos.
 7. Redactar criterios de aceptación verificables y preparar el plan de pruebas del MS-2.
 8. Confirmar con el equipo la arquitectura elegida y registrar los dispositivos, navegadores o sistemas que se usarán.
-9. Diseñar el prototipo de bienvenida con personaje, misión, AUDIO y COMENZAR.
-10. Diseñar el prototipo de selección simple con estados inicial, seleccionado, acierto y reintento.
+9. Diseñar la bienvenida con personaje, misión, Escuchar y Comenzar.
+10. Diseñar la pregunta con Ver respuestas y las tarjetas de respuesta simple con evaluación al pulsar, acierto y reintento.
 11. Diseñar el prototipo de selección múltiple con marcado, desmarcado y confirmación del conjunto.
-12. Diseñar la ayuda, el progreso, la recompensa y los estados de carga, vacío y error del reporte docente.
+12. Diseñar los diálogos independientes de Ayuda y Lectura, el progreso, la recompensa y los estados del reporte docente.
 13. Revisar con el docente las consignas, pistas, mensajes e imágenes de las escenas que usarán las plantillas.
 14. Implementar los estilos y componentes reutilizables en la tecnología confirmada por el equipo.
 15. Aplicar las plantillas y los tamaños a las escenas y al reporte docente definidos en el backlog.
-16. Implementar selección simple, selección múltiple y prevención de confirmaciones repetidas.
-17. Integrar controles de AUDIO y AYUDA, evitando superposición de locuciones y pérdida de contexto.
+16. Implementar respuesta simple al pulsar, selección múltiple con confirmación y bloqueo de aciertos duplicados.
+17. Integrar Escuchar y Ayuda con interrupción de audio al abrir apoyos y conservación del estado de la actividad.
 18. Redactar e integrar etiquetas accesibles y alternativas textuales de las imágenes informativas.
-19. Implementar navegación por teclado, foco visible y entrada y salida accesible de la ayuda.
+19. Implementar teclado, foco visible, un solo diálogo activo, cierre con Escape y retorno al control de origen.
 20. Anunciar selección y resultado a las tecnologías de asistencia del entorno objetivo.
 21. Aplicar mensajes de acierto y reintento, progreso y recompensa con señales visuales y texto.
 22. Implementar reducción de movimiento y los estados de interfaz relacionados con uso sin conexión y guardado.
@@ -59,7 +62,7 @@ TAREAS
 27. Corregir los defectos encontrados y repetir las pruebas afectadas.
 28. Guardar las evidencias y obtener la revisión del equipo antes de cerrar el MS-2.
 29. Confirmar LSEC como lengua de señas del proyecto y documentar su alcance transversal.
-30. Diseñar el panel LSEC normal y ampliado con controles, estados de carga y alternativas cuando falta un video.
+30. Diseñar el diálogo LSEC a demanda, su ampliación, los controles y los estados de video pendiente o no disponible.
 31. Preparar el catálogo de guiones del ejemplo y la matriz de cobertura LSEC de las 60 escenas.
 32. Preparar los componentes C# de referencia para tema visual, selección y reproducción de videos LSEC locales.
 33. Validar los guiones con el docente y traducirlos a LSEC con profesionales y personas sordas usuarias de LSEC.

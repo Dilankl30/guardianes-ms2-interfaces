@@ -1,0 +1,17 @@
+﻿Prueba;Pasos;Resultado esperado;Estado
+Pregunta y revelado;"Abrir escena 2; pulsar Ver respuestas";Tres opciones equivalentes, consigna compacta, sin solución anticipada;Comprobado en prototipo
+Respuesta simple;"Responder Agua limpia; luego Botella de plástico";"Reintento y acierto; bloqueo después del acierto";Comprobado en prototipo
+Selección múltiple;Confirmar vacío, conjunto incompleto y conjunto correcto;Aviso, reintento y acierto sin duplicados;Comprobado en prototipo y modelo
+Apoyos y estado;Consultar Ayuda y Señas después de responder;"Una ventana; conserva etapa, elección y resultado";Comprobado en prototipo
+Foco y Escape;Tab, Mayús+Tab y Escape dentro del diálogo;Foco contenido y devuelto al control de origen;Comprobado en prototipo
+Lectura;"Activar texto grande y movimiento reducido; recargar";"Preferencias conservadas; lectura sin recortes";Comprobado en prototipo
+Ancho compacto;Probar cinco vistas dentro de 320 px;"Sin desbordamiento horizontal; desplazamiento vertical cuando se necesita";Comprobado en marco de ensayo
+LSEC pendiente;Abrir Señas sin clips aprobados;Aviso claro y reproducción inactiva;Comprobado en prototipo
+LSEC contextual;Abrir pista y seleccionar otros contenidos;Texto correspondiente y resultados solo tras evaluar;Comprobado en prototipo
+Reporte;Abrir estado Error y pulsar Reintentar;"Recuperación hacia Sin datos; sin registros reales";Comprobado en prototipo
+Video real;Reproducir, pausar, repetir, ampliar y cerrar clip aprobado;"Rostro y manos completos; controles efectivos; estado conservado";Pendiente de recursos e integración
+Locución local;Escuchar, repetir y abrir apoyos sin red;"Una locución a la vez; se detiene al abrir apoyos";Pendiente en ejecutable Unity
+Accesibilidad nativa;Recorrer cinco niveles con teclado y lector acordado;Todos los contenidos y acciones accesibles;Pendiente de integración
+Hardware y escala;Probar dispositivos, 200 %, orientaciones y tamaños físicos;Lectura y operación sin pérdida de contenido;Pendiente de equipos
+Revisión educativa y LSEC;Revisar con docente y usuarios de LSEC;Equivalencia, comprensión y aprobaciones registradas;Pendiente
+Cierre;Revisar criterios, matriz de 60 escenas e incidencias;Cobertura completa y revisión del equipo;Pendiente

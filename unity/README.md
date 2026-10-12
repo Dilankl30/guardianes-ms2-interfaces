@@ -1,31 +1,58 @@
 # Integración de MS-2 en Unity 2D
 
-El equipo confirmó Unity 2D, C#, Canvas, TextMeshPro, AudioSource y persistencia local en [MS-03](https://trello.com/c/2CD2Sc8B). La versión exacta de Unity y los equipos de destino aún deben registrarse. Este directorio entrega código de referencia y parámetros de montaje. **No es un proyecto Unity compilado ni un prefab ya validado.** No se encontró el editor Unity en este entorno; compilar y probar en el proyecto del equipo sigue pendiente.
+**Metáfora del Sistema: estándares de interfaces y LSEC.** El producto usa Unity 2D, C#, Canvas, TextMeshPro y recursos locales. Este directorio contiene componentes de referencia y una guía de montaje; la integración y compilación en la versión del equipo requieren verificación en Unity.
 
-## Montaje del ejemplo
+## Jerarquía de presentación
 
-1. Copiar `Runtime/` a `Assets/Guardianes/Interfaces/Runtime/` dentro de una rama de trabajo del proyecto. Conservar las reglas y versión de Unity del repositorio oficial.
-2. Usar Canvas `Screen Space - Overlay`, CanvasScaler `Scale With Screen Size`, referencia 1920 × 1080, `Match Width Or Height` 0.5 como punto inicial. EventSystem con el módulo de entrada que ya use el equipo. No instalar un segundo sistema de entrada sin revisar el proyecto.
-3. Crear esta jerarquía: `Canvas/Encabezado`, `Canvas/Actividad/Consigna`, `Actividad/Apoyos`, `Actividad/Opciones`, `Actividad/Resultado`, `Actividad/Confirmar`, `Canvas/PanelLSEC`, `Canvas/ModalAyuda`, `Canvas/ModalLSEC`. Usar LayoutGroup, ContentSizeFitter y ScrollRect vertical donde el contenido no quepa. Texto sin Auto Size que lo reduzca por debajo del mínimo acordado.
-4. Asignar TextMeshPro a consignas y etiquetas. Crear `InterfaceTheme` desde Create → Guardianes → Interfaces → Tema visual. Los valores son unidades de Canvas: a escala 2/3, 72 unidades producen un área aproximada de 48 píxeles. Esta relación no demuestra tamaño suficiente en todos los monitores: verificar escalado del sistema, resolución y distancia real de uso.
-5. En selección simple usar ToggleGroup sin confirmar al seleccionar. En múltiple usar Toggles independientes. Instanciar `SelectionModel` con IDs válidos de opciones y respuestas; reflejar su selección en los Toggles. ELEGIR llama a `Confirm()`. `Empty` pide elegir, `Retry` conserva la escena, `Correct` bloquea la respuesta y permite continuar una vez; `AlreadyConfirmed` no suma progreso.
-6. Añadir `VideoPlayer` al objeto del panel. Añadir `LsecPanel`; enlazar RawImage, placeholder, transcript TMP, status TMP y botones. RawImage con AspectRatioFitter `Fit In Parent`, fondo liso y espacio libre alrededor. El controlador usa VideoClip local y `APIOnly`; no se necesita RenderTexture ni URL externa.
-7. Crear un `LsecEntry` por contenido, con ID del catálogo, texto exacto y VideoClip importado. Mantener `linguisticallyApproved = false` hasta registrar revisión lingüística y su referencia. Un archivo existente sin aprobación tampoco se reproduce como traducción validada.
-8. Llamar `SetContent(entry)` al abrir una escena o seleccionar su consigna, ayuda, opción o resultado. No llamar al clip de acierto antes de evaluar. Cada opción debe tener acceso a su propio clip, conservando exactamente las mismas oportunidades de elegir.
-9. El panel ampliado utiliza el mismo reproductor: reubicar o redimensionar su contenedor y guardar RectTransform previo. Pausar al abrir un modal. Guardar el control que abrió el modal con EventSystem; al cerrar devolverle selección. Bloquear interacción detrás del modal. Escape y el botón CERRAR deben cerrar el modal; no depender únicamente del ratón.
-10. El AudioSource reproduce un AudioClip local tras pulsar AUDIO. Antes de reproducir, llamar a `PauseForNarration()`. El controlador LSEC pausa el AudioSource al iniciar señas. Definir con el docente si se ofrecerá reproducción simultánea opcional; por defecto evitar estímulos superpuestos.
-11. Conectar `onStatus` al mecanismo de accesibilidad que el equipo valide en su ejecutable. Un UnityEvent o un TMP_Text **no equivale** a compatibilidad con lectores de pantalla; debe verificarse con el lector, sistema y versión elegidos.
-12. Compilar el ejecutable, desconectar la red y repetir el recorrido, incluidos todos los videos locales. Probar archivo no preparado, fallo de reproducción, cambio rápido de escena, pausa, repetición, ampliación y tamaño de manos/rostro. Guardar evidencia antes de cerrar integración.
+```text
+Canvas
+  FondoDecorativo
+  Encabezado (identidad, nivel, escena)
+  Actividad
+    Pregunta (consigna, Escuchar, VerRespuestas)
+    Respuestas (franja, Escuchar, tarjetas)
+    Resultado (explicación, apoyos, Continuar)
+  Apoyos (Ayuda, Señas, Lectura)
+  CapaDialogos
+    Atenuacion
+    Ayuda
+    LSEC
+    Lectura
+```
 
-## Reglas de construcción
+El arte está en `../prototipo/assets/guardian-modular.png`. Texto y controles se construyen con componentes reales. Los cuatro diseños se encuentran en `../diseno/pantallas/`.
 
-- Texto sobre fondo sólido; no incrustarlo en la ilustración. El arte de referencia está en `../prototipo/assets/guardian-rio.png`.
-- Ancho inicial: zona de actividad 72–76 %, LSEC 24–28 %. Cuando no quepan ambos con tamaños legibles, apilar y habilitar desplazamiento. Nunca recortar el cuerpo del intérprete para llenar el panel.
-- Los clips se importan como recursos locales y se incluyen en la build mediante referencias desde los LsecEntry. Probar códec/tamaño en los equipos reales antes de fijar el formato definitivo.
-- El progreso de estudiantes lo administra el subsistema local del juego. Este paquete no modifica ni migra archivos reales de estudiantes.
-- No incluye traducciones a LSEC, locuciones finales, sistema de persistencia completo ni puente nativo de lector de pantalla.
+## Montaje
 
-## Referencias de implementación
+1. Copiar `Runtime/` a `Assets/Guardianes/Interfaces/Runtime/` en el proyecto del equipo. Registrar versión del editor, sistema operativo y dispositivos objetivo. Usar el sistema de entrada del proyecto.
+2. Configurar Canvas `Screen Space - Overlay` y CanvasScaler `Scale With Screen Size`, referencia 1920 × 1080, Match 0.5 como punto de partida. Crear EventSystem y seleccionar explícitamente el primer control de cada vista.
+3. Crear `InterfaceTheme` desde Create → Guardianes → Interfaces → Tema visual. El cuerpo de 36 unidades y objetivos de 72 unidades requieren verificación física. No reducir automáticamente textos para hacerlos caber; usar LayoutGroup y desplazamiento vertical cuando sea necesario.
+4. Activar Pregunta al entrar a una actividad y mantener Respuestas oculto. `VerRespuestas.onClick` activa la franja y las tarjetas y conserva la consigna. El controlador guarda etapa, IDs seleccionados, resultado y bloqueo independientemente de los diálogos.
+5. En respuesta simple, construir tarjetas con Button. Al pulsar, llamar a `SelectionModel.Select(id)` y después `Confirm()`. En múltiple, usar Toggles independientes que llaman a Select; solo el botón Confirmar respuestas llama a Confirm. Consultar el nombre exacto de métodos en `SelectionModel.cs`.
+6. `Empty` solicita seleccionar; `Retry` muestra explicación y permite reintentar; `Correct` bloquea respuestas y habilita Continuar; `AlreadyConfirmed` no registra otro intento ni avance. El gestor de progreso procesa una continuación por escena. La apertura de apoyos no reinicializa SelectionModel.
+7. Mantener una única vista de diálogo activa en CapaDialogos. Al abrir, detener AudioSource y el video, guardar el objeto seleccionado de EventSystem, activar la atenuación y desactivar interacción del contenido inferior mediante CanvasGroup. Seleccionar Cerrar y limitar la navegación a los controles del diálogo.
+8. Cerrar y Escape desactivan el diálogo, detienen el video, restauran la interacción de la actividad y seleccionan el control de origen. Si se pasa de Ayuda a LSEC, conservar el origen Ayuda y evitar dos modales simultáneos. Se debe implementar y probar la contención del foco; activar un CanvasGroup por sí solo no define el orden de navegación.
+9. Añadir VideoPlayer y LsecPanel dentro del diálogo LSEC. Enlazar RawImage, placeholder, transcript TMP, status TMP, botones y AudioSource. RawImage usa AspectRatioFitter `Fit In Parent`. El controlador usa `VideoClip` local y `APIOnly`; rostro, manos y espacio de señas se muestran completos.
+10. Crear LsecEntry por ID del catálogo. Registrar texto, VideoClip local y referencia de aprobación. Mantener `linguisticallyApproved = false` hasta disponer de revisión lingüística registrada. El catálogo debe coincidir con el contenido mostrado, incluidos estados dinámicos.
+11. Al abrir Señas, llamar a `SetContent(entry)` para la consigna. El selector de contexto accede a pista, opciones disponibles, navegación, ajustes y resultado solo después de evaluar. La ausencia de un clip aprobado muestra Video en preparación con controles inactivos.
+12. Ampliar redimensiona el contenedor del mismo diálogo y conserva el contenido. Pausar no pierde posición; Repetir vuelve al principio. Cerrar desactiva el componente y detiene la reproducción. Probar cambio de contexto durante carga, error de archivo y reapertura.
+13. Escuchar detiene la locución anterior y reproduce un AudioClip local. Antes de iniciar narración, llamar a `PauseForNarration()`. Antes de abrir cualquier apoyo o escena, detener la locución. El reproductor LSEC pausa el AudioSource al iniciar el video.
+14. Lectura cambia la escala tipográfica y la preferencia de movimiento. Persistir preferencias en el dispositivo con manejo de fallos. El progreso del juego lo administra su subsistema local y no depende del cierre de diálogos.
+15. Conectar textos y estados al mecanismo accesible que el equipo valide para su ejecutable. TMP_Text o UnityEvent no equivalen a compatibilidad con lector de pantalla. Comprobar nombres, orden, foco, mensajes y controles con el lector y sistema acordados.
+16. Compilar, desconectar la red y repetir el recorrido completo con recursos aprobados. Probar teclado, control por puntero, ampliación, foco, repetición de acciones y lectura del intérprete. Registrar evidencias y resolver bloqueos antes de cerrar la integración.
 
-- [Unity VideoPlayer](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Video.VideoPlayer.html): reproducción y estados del video.
-- [Unity CanvasScaler](https://docs.unity3d.com/Packages/com.unity.ugui@2.0/manual/script-CanvasScaler.html): escala de la interfaz. Consultar la documentación equivalente a la versión real del equipo.
+## Componentes
+
+- `InterfaceTheme`: colores y medidas de referencia.
+- `SelectionModel`: selección y evaluación sin dependencias de Unity.
+- `LsecEntry`: vínculo entre texto, archivo y validación lingüística.
+- `LsecPanel`: preparación y controles de video local.
+
+La coordinación de etapas y diálogos se monta en las escenas del producto siguiendo esta guía. Los componentes no constituyen un proyecto Unity completo ni acreditan su compilación. No se incluyen grabaciones LSEC, locuciones finales o un puente nativo de lector de pantalla.
+
+## Referencias
+
+- [Unity VideoPlayer](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Video.VideoPlayer.html).
+- [Unity CanvasScaler](https://docs.unity3d.com/Packages/com.unity.ugui@2.0/manual/script-CanvasScaler.html).
+
+Consultar las APIs equivalentes a la versión exacta del equipo.

@@ -1,11 +1,11 @@
-# Producción de LSEC
+# LSEC en Guardianes de la Amazonía Lectora
 
-Los CSV son editables y usan punto y coma y UTF-8. El catálogo contiene guiones españoles del ejemplo; NO contiene traducciones a LSEC. La matriz de 60 escenas registra la cobertura pendiente de los cinco niveles.
+El catálogo contiene guiones españoles del ejemplo para encargar su traducción. La matriz registra las 60 escenas de los cinco niveles y sus contenidos. Ambos archivos usan CSV, separador punto y coma y UTF-8.
 
-Por cada ID: revisar guion y equivalencia educativa; traducir con persona competente en LSEC; revisar con persona sorda usuaria de LSEC; grabar rostro, manos y espacio de señas completos sobre fondo liso; revisar claridad y significado; registrar versión, aprobación y permisos; importar como VideoClip local; probar reproducción, pausa, repetición, ampliación y error; comprobar en el ejecutable sin red.
+Cada consigna, opción, pista, respuesta, recompensa, menú, control, preferencia y estado tiene un ID. Las variantes de progreso se refieren a la escena real. El acceso a opciones se ofrece al revelar respuestas; el resultado solo se ofrece después de evaluar.
 
-No ofrecer el video del acierto antes de responder. No distinguir la opción correcta por color, gesto, duración o énfasis no justificado. Si un texto cambia, actualizar el clip y repetir la revisión correspondiente.
+Por cada ID: revisión docente del guion; traducción contextual en LSEC; revisión lingüística con participación de una persona sorda usuaria de LSEC; grabación; revisión de rostro, manos y espacio de señas; registro de aprobación, versión y permisos; integración de VideoClip local; prueba en el ejecutable sin red. La aprobación debe corresponder al texto exacto. Registrar cualquier modificación de contenido y volver a validar su traducción es parte del mantenimiento lingüístico.
 
-Los textos dinámicos requieren una variante específica por estado. Los IDs comun-progreso-1 a 4 ilustran esa regla; el juego final necesita variantes reales de progreso y mensajes. No pegar segmentos palabra por palabra suponiendo que forman LSEC correcta. La traducción debe resolver la gramática y el contexto.
+No se construye LSEC concatenando palabras españolas ni mediante gestos inventados. Las opciones tienen un tratamiento equivalente y la traducción no revela la solución. El icono de manos identifica un control; no representa una traducción.
 
-Falta cualquier video obligatorio → cobertura pendiente. Un aviso de recurso ausente no permite marcar la escena como accesible en LSEC.
+Estado de producción: guiones en español y matriz preparados; grabaciones, aprobaciones lingüísticas e integración de videos pendientes. Un aviso de video ausente no completa la cobertura. En Unity, los clips aprobados se empaquetan como recursos locales y se comprueban en los dispositivos acordados.
