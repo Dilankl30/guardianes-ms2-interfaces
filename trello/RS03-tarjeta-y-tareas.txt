@@ -1,0 +1,62 @@
+RS-03 | Estándares de interfaces | Dilan
+
+Responsable: Dilan
+Estado del requisito: En desarrollo
+
+DESCRIPCIÓN
+Definir y documentar los estándares de interfaces de Guardianes de la Amazonía Lectora y aplicarlos a los componentes comunes de los cinco niveles. La interfaz debe ayudar al estudiante a comprender la consigna, identificar las opciones, responder, recibir una explicación y continuar o reintentar. Debe mantener una distribución consistente, texto legible, controles grandes, apoyos de AUDIO y AYUDA, navegación por teclado y estados comprensibles sin depender solo del color o del sonido. El diseño se adaptará a computadoras y tabletas, contemplará el funcionamiento sin conexión y presentará el progreso de forma comprensible. Las pantallas del docente aplicarán los mismos estándares de legibilidad y navegación a los reportes definidos en el backlog.
+
+CRITERIOS DE ACEPTACIÓN
+La guía identifica los tipos de pantalla y establece tipografía, colores, espaciado, distribución, componentes y estados. Los cinco niveles utilizan las mismas reglas; las variaciones responden al contenido de cada escena del storytelling y quedan documentadas.
+
+Al abrir una actividad, el estudiante puede identificar el nivel, la consigna, las opciones y la acción disponible. En una pantalla amplia se distinguen instrucciones y escena; al reducir el ancho se apilan en orden lógico. En los tamaños acordados y al ampliar texto al 200 % no se cortan controles ni instrucciones. En la versión web se verifica el reajuste a 320 píxeles CSS de ancho en el contenido que admite redistribución.
+
+Las consignas contienen una acción principal, conservan el significado del storytelling y respetan el límite de 25 palabras en los bloques donde lo exige el backlog. Texto, imágenes y locución corresponden a la misma actividad. La revisión docente resuelve las observaciones de comprensión antes de cerrar el requisito.
+
+El texto del estudiante utiliza el tamaño base propuesto de 24 píxeles CSS o un equivalente legible comprobado en la aplicación nativa. Las combinaciones reales de texto y fondo alcanzan 4,5:1; los bordes e indicadores necesarios para identificar controles y estados alcanzan 3:1. Selección, acierto y error incluyen un indicador o texto además del color.
+
+Los controles del juego tienen un área seleccionable mínima de 48 por 48 píxeles CSS en la versión web y separación propuesta de 12 píxeles. En Unity se documenta y prueba su tamaño efectivo según pantalla y escala. Todos los estados conservan etiquetas legibles; activar dos veces una acción no duplica el resultado ni salta otra escena.
+
+En selección simple solo queda una opción elegida; en selección múltiple se pueden marcar y desmarcar las opciones previstas. La selección se diferencia de la confirmación cuando existe un botón ELEGIR o RESPONDER. El sistema comunica la selección sin adelantar el acierto y conserva la actividad al mostrar una pista o permitir un reintento.
+
+AUDIO inicia por acción del estudiante, permite pausar o repetir y evita locuciones superpuestas. Al cambiar de escena se detiene la locución anterior. AYUDA presenta la pista correspondiente y vuelve a la misma escena con la selección y el progreso conservados. Con el sonido apagado se mantiene la información necesaria para completar el reto.
+
+Todos los controles se operan mediante teclado, con orden lógico y foco visible. Al abrir la ayuda el foco entra en su contenido; al cerrarla regresa al control que la abrió. Cada control expone nombre, función y estado a la tecnología de asistencia del entorno objetivo; se verifican selección simple, selección múltiple y mensajes de resultado con lector de pantalla.
+
+El error ofrece una explicación o pista y la posibilidad de reintentar sin quitar logros ni imponer una cuenta regresiva. El acierto ofrece una explicación relacionada con la actividad. El progreso y la recompensa se comprenden con texto e imagen; la opción de reducir movimiento conserva la misma información en una presentación estática.
+
+La interfaz distingue preparación de recursos, disponibilidad sin conexión y fallos de guardado con mensajes que corresponden al estado real del sistema. Los reportes docentes definidos en el backlog muestran estados de carga, vacío y error comprensibles. Se registran pruebas en los dispositivos acordados y se corrigen los defectos que impiden cumplir los criterios antes de dar RS-03 por terminado.
+
+TAREAS
+1. Documentar el alcance del RS-03 y el inventario de tipos de pantalla compartidos por los cinco niveles.
+2. Definir el ciclo de interacción del juego y relacionar las acciones con el objetivo de lectura de cada nivel.
+3. Establecer tipografía, tamaños, espaciado y paleta, y calcular el contraste de las combinaciones propuestas.
+4. Diseñar los esquemas de distribución de la pantalla amplia y de la pantalla compacta.
+5. Especificar funciones y estados de botones, tarjetas, audio, ayuda, progreso y mensajes.
+6. Relacionar las reglas de accesibilidad con WCAG 2.2 y las buenas prácticas de accesibilidad de juegos.
+7. Redactar criterios de aceptación verificables y preparar el plan de pruebas del RS-03.
+8. Confirmar con el equipo la arquitectura elegida y registrar los dispositivos, navegadores o sistemas que se usarán.
+9. Diseñar el prototipo de bienvenida con personaje, misión, AUDIO y COMENZAR.
+10. Diseñar el prototipo de selección simple con estados inicial, seleccionado, acierto y reintento.
+11. Diseñar el prototipo de selección múltiple con marcado, desmarcado y confirmación del conjunto.
+12. Diseñar la ayuda, el progreso, la recompensa y los estados de carga, vacío y error del reporte docente.
+13. Revisar con el docente las consignas, pistas, mensajes e imágenes de las escenas que usarán las plantillas.
+14. Implementar los estilos y componentes reutilizables en la tecnología confirmada por el equipo.
+15. Aplicar las plantillas y los tamaños a las escenas y al reporte docente definidos en el backlog.
+16. Implementar selección simple, selección múltiple y prevención de confirmaciones repetidas.
+17. Integrar controles de AUDIO y AYUDA, evitando superposición de locuciones y pérdida de contexto.
+18. Redactar e integrar etiquetas accesibles y alternativas textuales de las imágenes informativas.
+19. Implementar navegación por teclado, foco visible y entrada y salida accesible de la ayuda.
+20. Anunciar selección y resultado a las tecnologías de asistencia del entorno objetivo.
+21. Aplicar mensajes de acierto y reintento, progreso y recompensa con señales visuales y texto.
+22. Implementar reducción de movimiento y los estados de interfaz relacionados con uso sin conexión y guardado.
+23. Probar los recorridos de bienvenida, respuesta simple, respuesta múltiple, ayuda, error y recompensa con teclado y lector de pantalla.
+24. Probar contraste, tamaño de controles, ampliación del texto, redistribución y cambio de orientación en los equipos acordados.
+25. Probar el recorrido con sonido apagado, recursos preparados sin conexión y repetición rápida de acciones.
+26. Realizar la revisión de uso con el docente y registrar los problemas de comprensión y operación.
+27. Corregir los defectos encontrados y repetir las pruebas afectadas.
+28. Guardar las evidencias y obtener la revisión del equipo antes de cerrar el RS-03.
+
+AVANCE DOCUMENTADO
+Preparación documental de las tareas 1 a 7 realizada. Integración, pruebas del juego y revisión del equipo pendientes. Horas, prioridad y puntos se acordarán con el equipo.
+
